@@ -62,12 +62,14 @@ const aroflo = require('aroflo-node')({
 // Create a new message board post:
 aroflo.messageBoard
     .messages
-    .create({
-        subject: 'This is a new post.',
-        message: '<p>This is the HTML body of the post.</p>'
-    })
-    .then((message) => {
-        // New post has been created
+    .list(({
+        expiry: {
+            from: "2021-01-01",
+            until: "2021-01-31"
+        }
+    }))
+    .then((messages) => {
+        // list of messages
     })
     .catch((err) => {
         // Deal with an error
@@ -87,8 +89,10 @@ const aroflo = require('aroflo-node')({
 
 const response = await aroflo.messageBoard
     .messages
-    .create({
-    	subject: 'This is a new post.',
-    	message: '<p>This is the HTML body of the post.</p>'
+    .list({
+    	  expiry: {
+          from: "2021-01-01",
+          until: "2021-01-31"
+        }
     });
 ```
