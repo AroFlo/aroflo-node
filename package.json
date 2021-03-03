@@ -1,0 +1,17 @@
+{
+	"name": "aroflo-node-api",
+	"version": "0.15.0-SNAPSHOT.0",
+	"description": "NodeJS Client for the AroFlo API",
+	"homepage": "https://bitbucket.org/imsdev/aroflo-node-api",
+	"author": {
+		"email": "support@aroflo.com",
+		"name": "AroFlo",
+		"url": "https://aroflo.com"
+	},
+	"license": "MIT",
+	"main": "src/aroflo.js",
+	"dependencies": {
+		"crypto-js": "^4.0.0",
+		"node-fetch": "^2.6.0"
+	}
+}
