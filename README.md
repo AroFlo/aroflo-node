@@ -33,7 +33,7 @@ The package needs to be configured with your AroFlo Extended API credentials.
 ```js
 const AroFlo = require('aroflo-node');
 const aroflo = new AroFlo({
-    publicPersonalKey: "YOUR_PUBLIC_PERSONAL_KEY"
+    publicPersonalToken: "YOUR_PUBLIC_PERSONAL_TOKEN"
     , secretSigningKey: "YOUR_SECRET_SIGNING_KEY"
 });
 ```
@@ -43,7 +43,7 @@ Or using ES modules, this looks more like:
 ```js
 import AroFlo from 'aroflo-node';
 const aroflo = new AroFlo({
-    publicPersonalKey: "YOUR_PUBLIC_PERSONAL_KEY"
+    publicPersonalToken: "YOUR_PUBLIC_PERSONAL_TOKEN"
     , secretSigningKey: "YOUR_SECRET_SIGNING_KEY"
 });
 ```
@@ -55,7 +55,7 @@ callback:
 
 ```js
 const aroflo = require('aroflo-node')({
-    publicPersonalKey: "YOUR_PUBLIC_PERSONAL_KEY"
+    publicPersonalToken: "YOUR_PUBLIC_PERSONAL_TOKEN"
     , secretSigningKey: "YOUR_SECRET_SIGNING_KEY"
 });
 
