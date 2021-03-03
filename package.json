@@ -1,5 +1,5 @@
 {
-	"name": "aroflo-node-api",
+	"name": "aroflo-node",
 	"version": "0.15.0-SNAPSHOT.0",
 	"description": "NodeJS Client for the AroFlo API",
 	"homepage": "https://bitbucket.org/imsdev/aroflo-node-api",
