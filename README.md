@@ -18,12 +18,12 @@ Please note that this API Library is still under active development and is subje
 ### NPM
 
 ```bash
-npm install git+https://github.com/aroflo/aroflo-node.git
+npm install aroflo-node
 ```
 
 #### Yarn
 ```bash
-yarn add git+https://github.com/aroflo/aroflo-node.git
+yarn add aroflo-node
 ```
 
 ## Usage

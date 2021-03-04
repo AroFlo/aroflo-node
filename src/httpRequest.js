@@ -65,7 +65,7 @@ module.exports = (AroFlo) => {
 			return null;
 		}
 
-		return CryptoJS.MD5(content).toString();
+		return CryptoJS.MD5(JSON.stringify(content)).toString();
 	};
 
 	/*
@@ -78,7 +78,6 @@ module.exports = (AroFlo) => {
 		, requestURI
 		, requestTimestamp
 		, acceptHeader
-		, contentTypeHeader
 		, content
 	) => {
 		const payload = [];
@@ -100,7 +99,6 @@ module.exports = (AroFlo) => {
 
 		// body content
 		if (typeof content != undefined && content) {
-			payload.push(contentTypeHeader.toLowerCase());
 			payload.push(content.toUpperCase());
 		}
 
@@ -163,9 +161,8 @@ module.exports = (AroFlo) => {
 		// add authentication headers - HMAC
 		const publicPersonalToken = AroFlo.getApiField("publicPersonalToken");
 		const secretSigningKey = AroFlo.getApiField("secretSigningKey");
+		const bodyMD5 = generateMD5Hash(body);
 		if (publicPersonalToken != null && secretSigningKey != null) {
-			const bodyMD5 = generateMD5Hash(body);
-
 			const hmacSignature = generateHMACSignature(
 				publicPersonalToken
 				, secretSigningKey
@@ -173,11 +170,15 @@ module.exports = (AroFlo) => {
 				, requestURL.pathname + requestURL.search
 				, requestTimestamp
 				, requestHeaders.get("Accept")
-				, bodyMD5 == null ? null : requestHeaders.get("Content-Type")
 				, bodyMD5
 			);
 
 			requestHeaders.set("Authorization", "HMAC " + publicPersonalToken + ":" + hmacSignature);
+		}
+
+		if (bodyMD5 != null) {
+		    requestHeaders["Content-Type"] = "application/json; charset=UTF-8";
+		    requestHeaders['Content-Length'] = JSON.stringify(body).length;
 		}
 
 		return executeRequest(method, requestURL.toString(), requestHeaders, JSON.stringify(body));

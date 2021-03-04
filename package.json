@@ -1,17 +1,28 @@
 {
-	"name": "aroflo-node",
-	"version": "0.15.0-SNAPSHOT.0",
-	"description": "NodeJS Client for the AroFlo API",
-	"homepage": "https://bitbucket.org/imsdev/aroflo-node-api",
-	"author": {
-		"email": "support@aroflo.com",
-		"name": "AroFlo",
-		"url": "https://aroflo.com"
-	},
-	"license": "MIT",
-	"main": "src/aroflo.js",
-	"dependencies": {
-		"crypto-js": "^4.0.0",
-		"node-fetch": "^2.6.0"
-	}
+  "name": "aroflo-node",
+  "version": "0.15.2",
+  "description": "NodeJS Client for the AroFlo API",
+  "homepage": "https://aroflo.com",
+  "author": "AroFlo <support@aroflo.com> (https://aroflo.com)",
+  "license": "MIT",
+  "main": "src/aroflo.js",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AroFlo/aroflo-node.git"
+  },
+  "keywords": [
+    "aroflo",
+    "api",
+    "job management"
+  ],
+  "bugs": {
+    "url": "https://github.com/AroFlo/aroflo-node/issues"
+  }
 }
