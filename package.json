@@ -1,0 +1,24 @@
+{
+  "name" : "aroflo-node",
+  "version" : "2021.6.50",
+  "description" : "NodeJS Client for the AroFlo Extended API Platform",
+  "homepage" : "https://aroflo.com",
+  "author" : {
+    "email" : "support@aroflo.com",
+    "name" : "AroFlo",
+    "url" : "https://aroflo.com"
+  },
+  "license" : "MIT",
+  "main" : "src/aroflo.js",
+  "dependencies" : {
+    "crypto-js" : "^4.0.0"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git+https://github.com/AroFlo/aroflo-node.git"
+  },
+  "keywords" : [ "aroflo", "api", "job management" ],
+  "bugs" : {
+    "url" : "https://github.com/AroFlo/aroflo-node/issues"
+  }
+}
